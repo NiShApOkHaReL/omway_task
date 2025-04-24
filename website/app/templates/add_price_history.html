@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Price History</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+    {% include 'navbar.html' %}
+
+    <div class="container mx-auto mt-10 px-4 max-w-2xl">
+        <h1 class="text-2xl font-bold text-gray-800 mb-4">Add Price History</h1>
+
+        <form method="POST" class="bg-white p-6 rounded-lg shadow space-y-4">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button type="submit" class="bg-blue-600 hover:bg-blue-700 transition duration-200 text-white px-4 py-2 rounded-xl shadow-sm text-sm font-medium">
+                Save Price History
+            </button>
+        </form>
+    </div>
+
+</body>
+</html>

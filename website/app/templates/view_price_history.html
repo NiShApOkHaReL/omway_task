@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Price History</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+    {% include 'navbar.html' %}
+
+    <div class="container mx-auto mt-10 px-4 max-w-2xl">
+        <h1 class="text-2xl font-bold text-gray-800 mb-4">Price History</h1>
+
+        <table class="min-w-full bg-white border border-gray-300 rounded-lg shadow-md">
+            <thead>
+                <tr class="bg-gray-200 text-left">
+                    <th class="px-4 py-2">Company</th>
+                    <th class="px-4 py-2">Date</th>
+                    <th class="px-4 py-2">Open Price</th>
+                    <th class="px-4 py-2">High Price</th>
+                    <th class="px-4 py-2">Low Price</th>
+                    <th class="px-4 py-2">Close Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for history in price_histories %}
+                    <tr>
+                        <td class="px-4 py-2">{{ history.company.name }}</td>
+                        <td class="px-4 py-2">{{ history.date }}</td>
+                        <td class="px-4 py-2">{{ history.open_price }}</td>
+                        <td class="px-4 py-2">{{ history.high_price }}</td>
+                        <td class="px-4 py-2">{{ history.low_price }}</td>
+                        <td class="px-4 py-2">{{ history.close_price }}</td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="6" class="px-4 py-2 text-center text-gray-500">No price history available.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

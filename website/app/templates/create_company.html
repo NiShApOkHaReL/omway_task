@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+    {% include 'navbar.html' %}
+
+    <div class="container mx-auto mt-10 px-4 max-w-xl">
+        <h1 class="text-2xl font-bold text-gray-800 mb-4">Create Company</h1>
+
+        <form method="POST" class="space-y-4 bg-white p-6 rounded-lg shadow">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button type="submit" class="bg-blue-600 hover:bg-blue-700 transition duration-200 text-white px-4 py-2 rounded-xl shadow-sm text-sm font-medium">
+                Submit
+            </button>
+        </form>
+    </div>
+
+</body>
+</html>

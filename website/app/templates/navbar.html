@@ -1,0 +1,16 @@
+<nav class="bg-white border-b border-gray-200 shadow-sm px-6 py-3 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+        
+        <div class="text-2xl font-extrabold text-blue-700 tracking-tight">
+            <a href="{% url 'home' %}" class="hover:underline">MySite</a>
+        </div>
+
+       
+        <div class="space-x-3">
+            <a href="{% url 'create_company' %}" class="bg-blue-600 hover:bg-blue-700 transition duration-200 text-white px-4 py-2 rounded-xl shadow-sm text-sm font-medium">Create Company</a>
+            <a href="{% url 'add_news' %}" class="bg-blue-600 hover:bg-blue-700 transition duration-200 text-white px-4 py-2 rounded-xl shadow-sm text-sm font-medium">Add News</a>
+            <a href="{% url 'add_price_history' %}" class="bg-blue-600 hover:bg-blue-700 transition duration-200 text-white px-4 py-2 rounded-xl shadow-sm text-sm font-medium">Add Price History</a>
+            <a href="{% url 'view_price_history' %}" class="bg-blue-600 hover:bg-blue-700 transition duration-200 text-white px-4 py-2 rounded-xl shadow-sm text-sm font-medium">View Price History</a>
+        </div>
+    </div>
+</nav>
